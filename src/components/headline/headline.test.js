@@ -26,7 +26,7 @@ describe('Headline Component', () => {
                     onlineStatus: false,
                 }]
             };
-            
+
             expect(checkProps(Headline, expectedProps)).toBe(undefined);
         });
 
