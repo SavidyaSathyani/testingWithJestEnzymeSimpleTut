@@ -3,10 +3,6 @@ import PropTypes from 'prop-types';
 
 class Headline extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         const {
             header,
@@ -28,7 +24,7 @@ class Headline extends Component {
     }
 }
 
-Headline.protoTypes = {
+Headline.propTypes = {
     header: PropTypes.string,
     description: PropTypes.string,
     tempArray: PropTypes.arrayOf(PropTypes.shape({
