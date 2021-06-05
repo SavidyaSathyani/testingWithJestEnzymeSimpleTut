@@ -38,7 +38,7 @@ class App extends Component {
     };
 
     return (
-      <div className="App">
+      <div className="App" data-test="appComponent">
         <Header />
         <section className="main">
           <Headline header={"Posts"} description={"Click the button to render posts"} tempArray={tempArray} />
@@ -64,16 +64,12 @@ class App extends Component {
   }
 }
 
-const mapStateToProps = state => {
-  return {
-    posts: state.posts,
-  }
-};
+const mapStateToProps = (state) => ({
+  posts: state.posts,
+});
 
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     fetchPosts: () => dispatch(),
-//   }
-// }
+const mapDispatchToProps = (dispatch) => ({
+  fetchPosts: () => dispatch(fetchPosts()),
+});
 
-export default connect(mapStateToProps, { fetchPosts })(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
