@@ -37,4 +37,16 @@ describe('App Component', () => {
     expect(findByTestAttribute(component, 'appComponent').length).toBe(1);
   });
 
+  it('This method should update state as expected', () => {
+    const classInstance = component.instance();
+    classInstance.toggleButtonVisibility();
+    expect(classInstance.state.hideBtn).toBe(true);
+  });
+
+  it('This method should return value as expected', () => {
+    const classInstance = component.instance();
+    const newNumber = classInstance.incrementNumbers(5);
+    expect(newNumber).toEqual(6);
+  })
+
 });
